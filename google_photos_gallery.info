@@ -2,6 +2,7 @@ name = google_photos_gallery
 description = load iamge from google photos automatically
 package = carcheky
 core = 7.x
+dependencies[] = link
 
 # files[] = tests/get_image.test
 # configure = admin/config/TODO-SECTION/get_image
