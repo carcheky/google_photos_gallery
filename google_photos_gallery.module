@@ -67,13 +67,8 @@ function google_photos_gallery_field_widget_info() {
 function google_photos_gallery_field_formatter_info() {
   return array(
     // This formatter just displays the hex value in the color indicated.
-    'google_photos_gallery_simple_text' => array(
-      'label' => t('Simple text-based formatter'),
-      'field types' => array('google_photos_gallery_url'),
-    ),
-    // This formatter changes the background color of the content region.
-    'google_photos_gallery_color_background' => array(
-      'label' => t('Change the background of the output text'),
+    'google_photos_gallery_image' => array(
+      'label' => t('Simple load metaimage'),
       'field types' => array('google_photos_gallery_url'),
     ),
   );
