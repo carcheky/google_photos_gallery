@@ -16,6 +16,7 @@ function google_photos_gallery_help($path, $arg) {
   }
 }
 
+
 /**
  * Implements hook_field_info().
  *
@@ -27,11 +28,13 @@ function google_photos_gallery_field_info() {
     'google_photos_gallery_url' => array(
       'label' => t('Google Photos Album Link'),
       'description' => t('Load image from album link.'),
-      'default_widget' => 'google_photos_gallery_3text',
-      'default_formatter' => 'google_photos_gallery_simple_text',
+      'default_widget' => 'google_photos_gallery_load_img',
+      'default_formatter' => 'google_photos_gallery_image',
     ),
   );
 }
+
+
 /**
  * Implements hook_field_widget_info().
  *
@@ -55,6 +58,7 @@ function google_photos_gallery_field_widget_info() {
   );
 }
 
+
 /**
  * Implements hook_field_formatter_info().
  *
@@ -77,47 +81,3 @@ function google_photos_gallery_field_formatter_info() {
 
 
 
-
-
-
-// function google_photos_gallery_url($fotosurl){
-//     $html = google_photos_gallery_file_get_contents_curl($fotosurl);
-
-//     //parsing begins here:
-//     $doc = new DOMDocument();
-//     @$doc->loadHTML($html);
-//     $nodes = $doc->getElementsByTagName('title');
-
-//     //get and display what you need:
-//     $title = $nodes->item(0)->nodeValue;
-
-//     $metas = $doc->getElementsByTagName('meta');
-
-//     for ($i = 0; $i < $metas->length; $i++)
-//     {
-//         $meta = $metas->item($i);
-//         if($meta->getAttribute('name') == 'description')
-//             $description = $meta->getAttribute('content');
-//         if($meta->getAttribute('name') == 'keywords')
-//             $keywords = $meta->getAttribute('content');
-//     }
-
-//     echo "Title: $title". '<br/><br/>';
-//     echo "Description: $description". '<br/><br/>';
-//     echo "Keywords: $keywords";
-// }
-
-// function google_photos_gallery_file_get_contents_curl($url)
-// {
-//     $ch = curl_init();
-
-//     curl_setopt($ch, CURLOPT_HEADER, 0);
-//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//     curl_setopt($ch, CURLOPT_URL, $url);
-//     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-
-//     $data = curl_exec($ch);
-//     curl_close($ch);
-
-//     return $data;
-// }
