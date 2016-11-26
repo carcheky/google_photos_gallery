@@ -47,9 +47,9 @@ function google_photos_gallery_get_meta_tags($url){
       //     $meta_og_description = $meta->getAttribute('content');
       // }
   }
-  echo "<a href='$url'><img src=$meta_og_img ></a>";
+  echo "<a href='$url' target='_blank'><img src=$meta_og_img ></a>";
   // echo "<em>$meta_og_description</em>";
-  echo "<a href='$url'><h2>$meta_og_title</h2></a>";
+  echo "<a href='$url' target='_blank'><h2>$meta_og_title</h2></a>";
 }
 
 
